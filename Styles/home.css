@@ -1,0 +1,90 @@
+@import "../style.css";
+
+
+.intro-site{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px;
+    background-color: #dcd6e4ad;  
+}
+.conhecer-titulo{
+    color:#300f50;
+    font-size: 60px;
+
+    span{
+        color:#49177b;
+    }
+}
+.conhecer-texto{
+    color: #635871;
+    font-size: 20px;
+    font-weight: 520;
+}
+.conhecer-img{
+    width: 280px;
+    height: 280px;
+}
+.button-intro{
+    display: flex;
+    gap: 10px;
+}
+.conhecer-cursos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 40px;
+    color: #e6def1;
+    font-weight: 600;
+    background-color: #49177b;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+.conhecer-cursos:hover{
+    background-color: #6320a7;
+}
+.conhecer-projeto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 40px;
+    color: #49177b;
+    font-weight: 600;
+    background-color: #e6def1;
+    border-radius: 10px;
+    border: 1px solid #aca0bc;
+    text-decoration: none;
+}
+.conhecer-projeto:hover{
+    color: #300f50;
+    background-color: #e6def195;
+    transition: 300ms;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.trilha{
+    
+}
+
+.trilha-titulo{
+
+}
+
+.trilha-texto{
+
+}
+
+.trilha-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trilha-card{
+    width: 200px;
+    height: 100px;
+}

@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e6def1;
+    background-image: url('./imgs/fundo.gif');
+    background-size: cover; /* Faz o GIF cobrir todo o fundo */
+    background-position: center; /* Centraliza o GIF */
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 60px;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);  
+}
+
+.titulo-projeto{
+    color: #300f50;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.btn-navs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.acesso-atual{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 32px;
+    color: #49177b;
+    font-weight: 700;
+    background-color: transparent;
+    border-radius: 10px;
+    border-color: transparent;
+    text-decoration: none;
+}
+
+.acesso-atual:hover{
+    color: #33095c;
+    transition: 300ms;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.navs-acesso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 32px;
+    color: #e6def1;
+    font-weight: 600;
+    background-color: #49177b;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.navs-acesso:hover{
+    background-color: #33095c;
+}
