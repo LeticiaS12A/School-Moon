@@ -7,7 +7,7 @@ body{
     background-size: cover; /* Faz o GIF cobrir todo o fundo */
     background-position: center; /* Centraliza o GIF */
 }
-.container{
+.container-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,44 +27,86 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 .acesso-atual{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    padding: 2px 20px;
     height: 32px;
     color: #49177b;
     font-weight: 700;
-    background-color: transparent;
+    background-color: #c5a0eb80;
     border-radius: 10px;
     border-color: transparent;
     text-decoration: none;
 }
 
 .acesso-atual:hover{
-    color: #33095c;
+    transform: translateY(-2px);
+    color: #a78ac48d;
     transition: 300ms;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
 
 .navs-acesso{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 140px;
     height: 32px;
-    color: #e6def1;
+    color:#33095c;
     font-weight: 600;
-    background-color: #49177b;
+    background-color: transparent;
     border: 0;
     border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
     text-decoration: none;
 }
 
 .navs-acesso:hover{
-    background-color: #33095c;
+    transform: translateY(-2px);
+    color: #a78ac48d;
+    transition: 300ms;
+}
+
+.container-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f6f3fae0;
+    height: 180px;
+}
+
+.footer-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #907eaa54;
+    height: 80px;
+}
+.footer-navs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 280px;
+    color: #907eaa;
+}
+
+.footer-titulo{
+    color: #300f50;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.navs-footer{
+    text-decoration: none;
+    color: #33095cac;
+    font-size: 14px;
+}
+.creditos{
+    color: #33095c85;
+    font-size: 14px;
+    padding: 24px 0px
 }
