@@ -1,6 +1,5 @@
 @import "../style.css";
 
-
 .intro-site{
     display: flex;
     justify-content: space-between;
@@ -73,28 +72,24 @@
     flex-direction: column;
     padding: 40px 0px;
 }
-
 .trilha-titulo{
-    color:#ffffff;
+    color:#e3dcec;
     font-size: 40px;
     font-weight: 600;
     margin-bottom: -10px;
 }
-
 .trilha-texto{
     color: #cfc6da;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 60px;
 }
-
 .trilha-cards{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
 }
-
 .trilha-card{
     display: flex;
     justify-content: center;
@@ -107,10 +102,36 @@
     border: 2px solid #aca0bc;
     color: #49177b;
 }
-
+.trilha-card:hover{
+    color: #300f50;
+    background-color: #e6dff090;
+    transition: 300ms;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
 .trilha-curso{
     color:#49177b;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: -4px;
+}
+.visitar-cursos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 40px;
+    margin-top: 40px;
+    background-color: #e6dff090;
+    border-radius: 10px;
+    border: 2px solid #aca0bc;
+    font-size: 16px;
+    font-weight: 700;
+    color: #49177b;
+    text-decoration: none;
+}
+.visitar-cursos:hover{
+    color: #300f50;
+    background-color: #e6def1bb;
+    transition: 300ms;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
