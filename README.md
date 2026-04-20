@@ -45,24 +45,24 @@ O projeto foi desenvolvido utilizando:
 Siga os passos abaixo para rodar o projeto localmente:
 
 1️⃣ Instalar dependências
--npm install
+npm install
 
 2️⃣ Configurar o banco de dados
--Execute o arquivo script.sql no MySQL
--Configure usuário e senha no arquivo:
--src/database/config.js
+Execute o arquivo script.sql no MySQL
+Configure usuário e senha no arquivo:
+src/database/config.js
 
 3️⃣ Iniciar o servidor
--node src/app.js
+node src/app.js
 
 4️⃣ Acessar no navegador
--http://localhost:3000
+http://localhost:3000
 
 ---
 
 📁 Estrutura do Projeto
 
--📦 school-moon
+- 📦 school-moon
 - ┣ 📂 src
 - ┃ ┣ 📂 controllers
 - ┃ ┣ 📂 models
@@ -78,12 +78,12 @@ Siga os passos abaixo para rodar o projeto localmente:
 
 Este projeto foi desenvolvido com foco na aplicação prática dos conteúdos estudados nas disciplinas de:
 
--Banco de Dados
--Algoritmos
--Desenvolvimento Web
--Arquitetura de Computadores
--Sistemas Operacionais
--Pesquisa e Inovação
+- Banco de Dados
+- Algoritmos
+- Desenvolvimento Web
+- Arquitetura de Computadores
+- Sistemas Operacionais
+- Pesquisa e Inovação
 
 ---
 
@@ -91,10 +91,10 @@ Este projeto foi desenvolvido com foco na aplicação prática dos conteúdos es
 
 O School Moon vai além de um projeto técnico — ele nasce de uma experiência real com ensino voluntário, com o objetivo de:
 
--Tornar o aprendizado mais acessível
--Incentivar a constância nos estudos
--Organizar conteúdos de forma clara
--Gerar impacto através da educação
+- Tornar o aprendizado mais acessível
+- Incentivar a constância nos estudos
+- Organizar conteúdos de forma clara
+- Gerar impacto através da educação
 
 ---
 
