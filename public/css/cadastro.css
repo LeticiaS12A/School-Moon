@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 90%;
 }
 
 .card {
@@ -22,7 +22,7 @@
     color: #e6def1;
     flex-direction: column;
     height: fit-content;
-    padding: 20px 0;
+    padding: 20px 0px;
 }
 
 .card h2 {

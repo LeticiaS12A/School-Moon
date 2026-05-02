@@ -1,11 +1,8 @@
 .body-home{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
     color: #e6def1;
-    background-image: url('../assets/imgs/fundoHome.gif');
     background-size: cover;
-    background-position: center;
 }
 
 .intro-site{
