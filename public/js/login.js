@@ -39,7 +39,7 @@
                     sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
-                        window.location = "./index.html";
+                        window.location = "./cursos.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
