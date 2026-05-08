@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body>
   <!--header inicio-->
   <header>
       <div class="container-header">
@@ -26,30 +26,30 @@
           <nav class="btn-navs">
               <a href="index.html" class="navs-acesso">Inicial</a>
               <a href="sobre.html" class="navs-acesso">Sobre-nos</a>
-              <a href="login.html"class="navs-acesso">Login</a>
+              <a href="login.html" class="navs-acesso">Login</a>
               <a href="#" class="acesso-atual">Cadastro</a>
           </nav>
       </div>
   </header>
   <!--header fim-->
 
-  <div class="alerta_erro"> <!--Card de erro modal(ou seja esta oculto até ser chamado)-->
-    <div class="card_erro" id="cardErro">
-      <span id="fechar" onclick="sumirMensagem()">&times;</span><!--X para fechar o card de erro-->
-      <span id="mensagem_erro"></span><!--Mensagem de erro que muda de acordo com os IFs do script-->
+  <div class="alerta_erro"> 
+    <div class="card_erro" id="cardErro" style="display: none;">
+      <span id="fechar" onclick="sumirMensagem()">&times;</span>
+      <span id="mensagem_erro"></span>
     </div>
   </div>
 
-  <section class="card"> <!--Card principal da tela-->
+  <section class="card"> 
     <div class="forms">
-      <form id="login-form" class="form"> <!--Tag de inicio do formulario do cadastro-->
+      <form id="login-form" class="form"> 
         <h2>Cadastre-se aqui!</h2>
         <input type="text" id="nome_completo" placeholder="Nome Completo">
         <input type="password" id="senha_imp" placeholder="Senha">
         <input type="password" id="confirmar_senha" placeholder="Confirmar Senha">
         <input type="email" id="email" placeholder="Email">
 
-        <button type="button" onclick="cadastrar()">Cadastrar</button><!--botao de envio do cadastro-->
+        <button type="button" onclick="cadastrar()">Cadastrar</button>
       </form>
         <p class="com-cadastro">Já possuo conta!  <a href="login.html">Fazer Login</a></p>
     </div>
@@ -69,12 +69,70 @@
             <div>
                 <p class="creditos">© 2026 School Moon — Educação gratuita e acessível para todos.</p>
             </div>
-            
         </div>
     </footer>
   <!--footer fim-->
+
+  <script>
+    function cadastrar() {
+      // Usando os IDs exatos do seu novo HTML
+      var nomeVar = nome_completo.value.trim();
+      var emailVar = email.value.trim();
+      var senhaVar = senha_imp.value.trim();
+      var confirmacaoSenhaVar = confirmar_senha.value.trim();
+
+      if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Preencha todos os campos.";
+        return false;
+      }
+
+      if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Email inválido.";
+        return false;
+      }
+
+      if (senhaVar != confirmacaoSenhaVar) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "As senhas não coincidem.";
+        return false;
+      }
+
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar
+        }),
+      })
+        .then(function (resposta) {
+          if (resposta.ok) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando...";
+
+            setTimeout(() => {
+              window.location = "login.html";
+            }, 2000);
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (erro) {
+          console.log(`#ERRO: ${erro}`);
+        });
+
+      return false;
+    }
+
+    function sumirMensagem() {
+      cardErro.style.display = "none";
+    }
+  </script>
 </body>
 
 </html>
-
-<script src="./js/cadastro.js"></script>
