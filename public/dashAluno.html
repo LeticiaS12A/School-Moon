@@ -2,11 +2,13 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard Aluno</title>
-
+    <title>School Moon | Dashboard</title>
     <link rel="stylesheet" href="./css/dashboards.css">
+    <script src="../js/sessao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+
+<body onload="obterDadosGrafico()">
 
 <header>
     <h1>School Moon</h1>
@@ -14,152 +16,145 @@
 </header>
 
 <div class="container">
-
     <div class="titulo-dashboard">
-        <h2>Olá, Letícia 👋</h2>
+        <h2>Olá, <span id="b_usuario">Aluno</span></h2>
         <p>Acompanhe seu progresso de estudos</p>
     </div>
 
     <section class="kpis">
-
         <div class="card-kpi">
             <h3>Progresso Geral</h3>
-            <p>68%</p>
+            <p id="kpi_progresso_geral">0%</p>
         </div>
-
         <div class="card-kpi">
             <h3>Cursos Iniciados</h3>
-            <p>3</p>
+            <p id="kpi_cursos_iniciados">0</p>
         </div>
-
         <div class="card-kpi">
             <h3>Cursos Concluídos</h3>
-            <p>1</p>
+            <p id="kpi_cursos_concluidos">0</p>
         </div>
-
-        <div class="card-kpi">
-            <h3>Conteúdos Concluídos</h3>
-            <p>18</p>
-        </div>
-
     </section>
 
     <section class="graficos">
-
         <div class="grafico">
-
             <h3>Progresso por Curso</h3>
-
-            <p>HTML</p>
-            <div class="barra-container">
-                <div class="barra html"></div>
+            <div id="container_barras">
             </div>
-
-            <p>CSS</p>
-            <div class="barra-container">
-                <div class="barra css"></div>
+            <div class="graph" style="margin-top: 20px;">
+                <canvas id="myChartCanvas"></canvas>
             </div>
-
-            <p>JavaScript</p>
-            <div class="barra-container">
-                <div class="barra js"></div>
-            </div>
-
         </div>
 
         <div class="grafico">
-
             <h3>Resumo</h3>
-
             <div class="lista">
-
                 <div class="item-lista">
                     <span>Curso Mais Avançado</span>
-                    <strong>HTML</strong>
+                    <strong id="resumo_mais_avancado">-</strong>
                 </div>
-
                 <div class="item-lista">
-                    <span>Curso Menos Acessado</span>
-                    <strong>JavaScript</strong>
+                    <span>Data do Primeiro Acesso</span>
+                    <strong id="resumo_data_inicio">-</strong>
                 </div>
-
-                <div class="item-lista">
-                    <span>Sequência de Estudos</span>
-                    <strong>5 dias</strong>
-                </div>
-
-                <div class="item-lista">
-                    <span>Ranking</span>
-                    <strong>Top 20%</strong>
-                </div>
-
             </div>
-
         </div>
-
     </section>
-
-    <section class="cards-grandes">
-
-        <div class="card-grande">
-
-            <h3>Próximos Objetivos</h3>
-
-            <div class="lista">
-
-                <div class="item-lista">
-                    <span>Finalizar CSS</span>
-                    <strong>70%</strong>
-                </div>
-
-                <div class="item-lista">
-                    <span>Iniciar React</span>
-                    <strong>Pendente</strong>
-                </div>
-
-                <div class="item-lista">
-                    <span>Completar JavaScript</span>
-                    <strong>40%</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="card-grande">
-
-            <h3>Atividades Recentes</h3>
-
-            <div class="lista">
-
-                <div class="item-lista">
-                    <span>HTML Semântico</span>
-                    <strong>Concluído</strong>
-                </div>
-
-                <div class="item-lista">
-                    <span>Flexbox</span>
-                    <strong>Concluído</strong>
-                </div>
-
-                <div class="item-lista">
-                    <span>DOM JavaScript</span>
-                    <strong>Em andamento</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
 </div>
 
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    var idUsuario = sessionStorage.ID_USUARIO;
 
-    console.log("Dashboard do aluno carregada");
+    function obterDadosGrafico() {
+        fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    plotarGrafico(resposta);
+                    atualizarKPIs(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+    }
 
+    let proximoGrafico;
+
+    function plotarGrafico(resposta) {
+        let labels = [];
+        let dadosProgresso = [];
+
+        container_barras.innerHTML = "";
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.nome_curso);
+            dadosProgresso.push(registro.progresso);
+
+            container_barras.innerHTML += `
+                <p>${registro.nome_curso}</p>
+                <div class="barra-container">
+                    <div class="barra" style="width: ${registro.progresso}%; background-color: #6c5ce7;"></div>
+                </div>
+            `;
+        }
+
+        if (proximoGrafico) {
+            proximoGrafico.destroy();
+        }
+
+        const ctx = document.getElementById('myChartCanvas').getContext('2d');
+        proximoGrafico = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Progresso %',
+                    data: dadosProgresso,
+                    backgroundColor: '#6c5ce7',
+                    borderColor: '#a29bfe',
+                    borderWidth: 1
+                }]
+            },
+            options: { 
+                scales: { 
+                    y: { beginAtZero: true, max: 100 } 
+                } 
+            }
+        });
+    }
+
+    function atualizarKPIs(resposta) {
+        if (resposta.length == 0) return;
+
+        let totalProgresso = 0;
+        let concluidos = 0;
+        let iniciados = 0;
+        let maiorProgresso = -1;
+        let cursoMaisAvancado = "";
+
+        resposta.forEach(r => {
+            totalProgresso += Number(r.progresso);
+            if (r.status == 'Concluido' || r.progresso == 100) concluidos++;
+            if (r.progresso > 0) iniciados++;
+            
+            if (r.progresso > maiorProgresso) {
+                maiorProgresso = r.progresso;
+                cursoMaisAvancado = r.nome_curso;
+            }
+        });
+
+        kpi_progresso_geral.innerHTML = `${(totalProgresso / resposta.length).toFixed(0)}%`;
+        kpi_cursos_iniciados.innerHTML = iniciados;
+        kpi_cursos_concluidos.innerHTML = concluidos;
+        resumo_mais_avancado.innerHTML = cursoMaisAvancado || "Nenhum";
+        resumo_data_inicio.innerHTML = resposta[0].dt_inicio || "Sem data"; 
+    }
 </script>
-
 </body>
 </html>
