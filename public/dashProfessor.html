@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin</title>
+
+    <link rel="stylesheet" href="./css/dashboards.css">
+</head>
+<body>
+
+<header>
+    <h1>School Moon</h1>
+    <p>Dashboard Professora</p>
+</header>
+
+<div class="container">
+
+    <div class="titulo-dashboard">
+        <h2>Visão Geral da Plataforma 📊</h2>
+        <p>Acompanhe o desempenho dos alunos</p>
+    </div>
+
+    <section class="kpis">
+
+        <div class="card-kpi">
+            <h3>Total de Alunos</h3>
+            <p>125</p>
+        </div>
+
+        <div class="card-kpi">
+            <h3>Taxa de Conclusão</h3>
+            <p>16%</p>
+        </div>
+
+        <div class="card-kpi">
+            <h3>Progresso Médio</h3>
+            <p>48%</p>
+        </div>
+
+        <div class="card-kpi">
+            <h3>Alunos Ativos</h3>
+            <p>42</p>
+        </div>
+
+    </section>
+
+    <section class="graficos">
+
+        <div class="grafico">
+
+            <h3>Conclusão Média por Curso</h3>
+
+            <p>HTML</p>
+            <div class="barra-container">
+                <div class="barra html"></div>
+            </div>
+
+            <p>CSS</p>
+            <div class="barra-container">
+                <div class="barra css"></div>
+            </div>
+
+            <p>JavaScript</p>
+            <div class="barra-container">
+                <div class="barra js"></div>
+            </div>
+
+        </div>
+
+        <div class="grafico">
+
+            <h3>KPIs Rápidos</h3>
+
+            <div class="lista">
+
+                <div class="item-lista">
+                    <span>Curso Mais Popular</span>
+                    <strong>JavaScript</strong>
+                </div>
+
+                <div class="item-lista">
+                    <span>Cursos Finalizados</span>
+                    <strong>74</strong>
+                </div>
+
+                <div class="item-lista">
+                    <span>Conteúdos Concluídos</span>
+                    <strong>621</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="tabela">
+
+        <h3>Alunos Recentes</h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Aluno</th>
+                    <th>Progresso</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Letícia</td>
+                    <td>68%</td>
+                    <td>
+                        <span class="status ativo">
+                            Ativo
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gabriel</td>
+                    <td>25%</td>
+                    <td>
+                        <span class="status andamento">
+                            Em andamento
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Amanda</td>
+                    <td>100%</td>
+                    <td>
+                        <span class="status ativo">
+                            Concluído
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>João</td>
+                    <td>5%</td>
+                    <td>
+                        <span class="status inativo">
+                            Inativo
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <section class="cards-grandes">
+
+        <div class="card-grande">
+
+            <h3>Cursos Mais Populares</h3>
+
+            <div class="lista">
+
+                <div class="item-lista">
+                    <span>HTML</span>
+                    <strong>98 alunos</strong>
+                </div>
+
+                <div class="item-lista">
+                    <span>CSS</span>
+                    <strong>87 alunos</strong>
+                </div>
+
+                <div class="item-lista">
+                    <span>JavaScript</span>
+                    <strong>61 alunos</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card-grande">
+
+            <h3>Resumo Geral</h3>
+
+            <div class="lista">
+
+                <div class="item-lista">
+                    <span>Total de Cursos</span>
+                    <strong>8</strong>
+                </div>
+
+                <div class="item-lista">
+                    <span>Total de Conteúdos</span>
+                    <strong>64</strong>
+                </div>
+
+                <div class="item-lista">
+                    <span>Novos Alunos</span>
+                    <strong>+18</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+
+    console.log("Dashboard admin carregada");
+
+</script>
+
+</body>
+</html>
