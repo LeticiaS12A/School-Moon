@@ -3,6 +3,10 @@
     padding: 0;
     color: #e6def1;
     background-size: cover;
+    background-image: url('../assets/imgs/fundoHome.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .intro-site{
@@ -10,20 +14,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 40px 40px;
-    background-color: #dcd6e4ad;  
 }
 .conhecer-titulo{
-    color:#300f50;
-    font-size: 60px;
+    color:#d9bdb0;
+    font-size: 46px;
+    font-weight: 500;
 
-    span{
-        color:#49177b;
-    }
 }
 .conhecer-texto{
-    color: #635871;
+    color: #c29d8b;
     font-size: 20px;
-    font-weight: 520;
+    font-weight: 500;
 }
 .conhecer-img{
     width: 280px;
@@ -39,9 +40,9 @@
     align-items: center;
     width: 200px;
     height: 40px;
-    color: #e6def1;
+    color: #0e0809;
     font-weight: 600;
-    background-color: #49177b;
+    background-color: #b35151;
     border: 0;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
@@ -49,7 +50,7 @@
 }
 .conhecer-cursos:hover{
     transform: translateY(-2px);
-    background-color: #6320a7;
+    background-color: #b35151bd;
 }
 .conhecer-projeto{
     display: flex;
@@ -57,18 +58,17 @@
     align-items: center;
     width: 240px;
     height: 40px;
-    color: #49177b;
+    color: #e0a4a4;
     font-size: 16px;
     font-weight: 600;
-    background-color: #e6def1;
+    background-color: transparent;
     border-radius: 10px;
-    border: 1px solid #aca0bc;
+    border: 1px solid #e0a4a4;
     text-decoration: none;
 }
 .conhecer-projeto:hover{
     transform: translateY(-2px);
-    color: #300f50;
-    background-color: #e6def195;
+    background-color: #e0a4a44a;
     transition: 300ms;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
@@ -78,8 +78,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 40px 0px;
-    gap: 80px;
+    padding: 120px 0px;
+    gap: 40px;
 }
 .trilha-titulos{
     display: flex;
@@ -88,16 +88,16 @@
     flex-direction: column;
 }
 .trilha-titulo{
-    color:#e3dcec;
+    color:#b35151;
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 500;
     
 }
 .trilha-texto{
-    color: #cfc6da;
+    color: #c29d8b;
     font-size: 20px;
     font-weight: 600;
-    margin-top: -20px;
+    margin-top: -30px;
 }
 .trilha-cards{
     display: flex;
@@ -112,20 +112,21 @@
     flex-direction: column;
     width: 300px;
     height: 80px;
-    background-color: #e6dff0bb;
+    background-color: #3b1515;
     border-radius: 10px;
-    border: 2px solid #aca0bc;
-    color: #49177b;
+    border: 2px solid #c29d8b;
+    color: #c29d8b;
 }
 .trilha-card:hover{
     transform: translateY(-2px);
-    color: #300f50;
-    background-color: #e6dff090;
+    color: #c29d8b;
+    background-color: #3b151590;
+    border: 2px solid #c29d8b90;
     transition: 300ms;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
 .trilha-curso{
-    color:#49177b;
+    color:#e0a4a4;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: -6px;
@@ -137,18 +138,17 @@
     width: 250px;
     height: 40px;
     margin-top: 40px;
-    background-color: #e6dff090;
-    border-radius: 10px;
-    border: 2px solid #aca0bc;
+    background-color: #3b1515;
+    border-radius: 10px;    
     font-size: 16px;
     font-weight: 700;
-    color: #49177b;
+    color: #b35151;
     text-decoration: none;
 }
 .visitar-cursos:hover{
     transform: translateY(-2px);
-    color: #300f50;
-    background-color: #e6def1bb;
+    color: #b35151;
+    background-color: #3b1515bb;
     transition: 300ms;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
@@ -160,7 +160,7 @@
     flex-direction: column;
     height: 580px;
     gap: 20px;
-    background-color: #dcd6e4ad;
+    background-color: #3b1515ad;
     color: #300f50;
 }
 .valores-titulos{
@@ -170,14 +170,14 @@
     flex-direction: column;
 }
 .valores-titulo{
-    color:#300f50;
-    font-size: 40px;
+    color:#d9bdb0;
+    font-size: 34px;
     font-weight: 600;
     
 }
 .valores-texto{
-    color: #49177bb6;
-    font-size: 20px;
+    color: #c29d8b;
+    font-size: 18px;
     font-weight: 600;
     margin-top: -20px;
 }
@@ -193,26 +193,27 @@
     flex-direction: column;
     width: 450px;
     height: 120px;
-    background-color: #f7f0ffd3;
+    background-color: #3b1515a2;
     border-radius: 10px;
-    border: 2px solid #aca0bc;
-    color: #49177b;
+    border: 2px solid #682424;
+    color: #d9bdb0;
 }
 .valores-card:hover{
     transform: translateY(-2px);
-    color: #300f50;
-    background-color: #e6dff090;
+    color: #3b1515;
+    border: 2px solid #3b151593;
+    background-color: #6824246b;
     transition: 300ms;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
 .valores-curso{
     padding: 0px 20px;
     font-weight: 700;
-    color: #300f50d3;
+    color: #c29d8b;
 }
 .valores-descricao{
     padding: 0px 20px;
-    color: #806b9c;
+    color: #9b7e6d;
     font-size: 16px;
     font-weight: 560;
 }

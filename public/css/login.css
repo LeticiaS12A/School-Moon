@@ -1,106 +1,111 @@
-.card {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../assets/imgs/fundoForm.gif');
+.body-login{
+  background-image: url('../assets/imgs/fundoHome.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    }
+}
+.card {
+  height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .forms {
-      background-color: #ffffffde;
-      border-radius: 14px;
-      padding: 32px;
-      width: 100%;
-      max-width: 420px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
-    }
+.forms {
+  background-color: #3b1515de;
+  border-radius: 14px;
+  padding: 32px;
+  margin-top: -84px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
 
-    .forms h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #300f50;
-    }
+.forms h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: -10px;
+  color: #d9bdb0;
+}
 
-    .form input {
-      width: 93%;
-      height: 42px;
-      margin-bottom: 14px;
-      padding: 0 14px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-    }
+.form input {
+  width: 93%;
+  height: 42px;
+  margin-bottom: 14px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #c29d8b;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
 
-    .form input:hover {
-      transform: translateY(-2px);
-    }
+.form input:hover {
+  transform: translateY(-2px);
+}
 
-    .form button {
-      width: 100%;
-      height: 42px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      border: none;
-      font-size: 1em;
-      cursor: pointer;
-      color: #f2efef;
-      background-color: #300f50;
-      transition: all 0.3s ease;
-    }
+.form button {
+  width: 100%;
+  height: 42px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  color: #3b1515;
+  background-color: #682424;
+  transition: all 0.3s ease;
+}
 
-    .form button:hover {
-      background-color: #5c1e99;
-      transform: translateY(-2px);
-    }
+.form button:hover {
+  background-color: #7b2f2f;
+  transform: translateY(-2px);
+}
 
-    .sem-cadastro{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-      color: #111;
-      font-size: 14px;
-      a{
-        color: #5c1e99;
-        font-weight: 600;
-      }
-    }
+.sem-cadastro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  color: #c29d8b;
+  font-size: 14px;
+  a{
+    color: #d9bdb0;
+    font-weight: 600;
+  }
+}
 
-    .alerta_erro {
-      display: flex;
-      justify-content: flex-end;
-    }
+.alerta_erro {
+  display: flex;
+  justify-content: flex-end;
+}
 
-    .card_erro {
-      display: none;
-      background: linear-gradient(135deg, #dc2626, #b91c1c);
-      color: #ffffff;
-      width: 260px;
-      position: fixed;
-      border-radius: 10px;
-      border: solid 1px black;
-      padding: 16px 18px;
-      margin-right: 10%;
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
-      font-family: 'Segoe UI', sans-serif;
-    }
+.card_erro {
+  display: none;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  color: #ffffff;
+  width: 260px;
+  position: fixed;
+  border-radius: 10px;
+  border: solid 1px black;
+  padding: 16px 18px;
+  margin-right: 10%;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    .card_erro span {
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.4;
-      display: block;
-      text-align: center;
-    }
+.card_erro span {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: block;
+  text-align: center;
+}
 
-    #fechar {
-      float: right;
-      font-size: 22px;
-      cursor: pointer;
-      margin-left: 5px;
-    }
+#fechar {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 5px;
+}

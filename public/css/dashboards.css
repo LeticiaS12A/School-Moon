@@ -1,30 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* CORES */
-
-:root{
-    --bg: #1a1418;
-    --bg2: #241a1f;
-    --card: #2a2025;
-
-    --rosa: #f4a8b0;
-    --rosa-hover: #f7b9c0;
-
-    --texto: #f5ecdf;
-    --texto-suave: #b8a89f;
-    --texto-fraco: #7a6b65;
-
-    --borda: rgba(245,236,223,0.12);
-
-    --verde: #8eb3a0;
-    --ouro: #d4b577;
-    --azul: #8aa8c4;
-
-    --titulo: "Cormorant Garamond", serif;
-    --textoFonte: "Inter", sans-serif;
-}
-
 /* RESET */
 
 *{
@@ -34,66 +10,18 @@
 }
 
 body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     min-height: 100vh;
-
-    font-family: var(--textoFonte);
-
-    color: var(--texto);
-
-    background:
-    radial-gradient(circle at top left, rgba(138,168,196,0.08), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(244,168,176,0.06), transparent 40%),
-    var(--bg);
-
-    background-attachment: fixed;
-}
-
-/* HEADER */
-
-header{
-    padding: 30px 60px 40px;
-
-    background:
-    linear-gradient(to bottom, rgba(0,0,0,0.5), transparent),
-    linear-gradient(to bottom, var(--bg2), var(--bg));
-
-    border-bottom: 1px solid var(--borda);
-}
-
-header h1{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    font-size: 15px;
-    font-weight: 600;
-}
-
-header h1::before{
-    content: "🌙";
-    font-size: 20px;
-}
-
-header p{
-    margin-left: 32px;
-    margin-top: 5px;
-
-    color: var(--texto-fraco);
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
 }
 
 /* CONTAINER */
 
 .container{
     max-width: 1200px;
-
     margin: -50px auto 0;
-
     padding: 0 40px 70px;
-
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -103,12 +31,11 @@ header p{
 
 .titulo-dashboard{
     padding: 40px 0 25px;
-
     border-bottom: 1px solid var(--borda);
 }
 
 .titulo-dashboard h2{
-    font-family: var(--titulo);
+    font-family: 18px;
 
     font-size: 60px;
     font-weight: 600;
@@ -116,22 +43,6 @@ header p{
     text-transform: uppercase;
 
     line-height: 1;
-}
-
-.titulo-dashboard h2::before{
-    content: "Leticia - Lua";
-
-    display: block;
-
-    margin-bottom: 12px;
-
-    font-family: var(--textoFonte);
-
-    font-size: 12px;
-
-    color: var(--rosa);
-
-    letter-spacing: 4px;
 }
 
 .titulo-dashboard p{

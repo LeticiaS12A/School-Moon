@@ -1,19 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-
-
-.pixelify-sans {
-  font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
 body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #3c265b;
+  background-color: #0e0809;
   text-decoration: none;
+  color: #d9bdb0;
 }
 
 :root {
@@ -24,20 +15,38 @@ body {
   --tamanho-footer: 65px;
 }
 
+/* HEADER */
+
+header{
+    padding: 30px 60px 40px;
+    background-color: transparent;
+}
+header h1{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+header p{
+    margin-left: 32px;
+    margin-top: 5px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
 .container-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 60px;
-    height: 60px;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);  
+    height: 40px;
+    background-color: transparent;
 }
 
 .titulo-projeto{
-    color: #300f50;
-    font-size: 22px;
-    font-weight: 700;
+    color: #d9bdb0;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .btn-navs{
@@ -52,18 +61,16 @@ body {
     justify-content: center;
     align-items: center;
     padding: 2px 20px;
-    height: 32px;
-    color: #49177b;
-    font-weight: 700;
-    background-color: #c5a0eb80;
-    border-radius: 10px;
-    border-color: transparent;
+    height: 22px;
+    color: #e0a4a4;
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 4px;
     text-decoration: none;
 }
 
 .acesso-atual:hover{
     transform: translateY(-2px);
-    color: #a78ac48d;
     transition: 300ms;
 }
 
@@ -72,7 +79,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 32px;
-    color:#33095c;
+    color:#d9bdb0;
+    border: 2px solid #d9bdb0;
     font-weight: 600;
     background-color: transparent;
     border: 0;
@@ -82,66 +90,8 @@ body {
 
 .navs-acesso:hover{
     transform: translateY(-2px);
-    color: #a78ac48d;
+    color: #d9bdb0b5;
     transition: 300ms;
-}
-
-/* BANNER */
-
-.banner {
-  height: var(--tamanho-banner);
-  color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
-  background-size: cover;
-}
-
-.banner .container {
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.banner .container p {
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  font-size: 36px;
-}
-
-.banner .container span {
-  font-weight: 800;
-}
-
-/* MISSÃO VISÃO VALORES */
-
-.social {
-  background-color: #e5e5e5;
-  display: flex;
-}
-
-.social .container {
-  justify-content: center;
-}
-
-.box img {
-  width: 170px;
-}
-
-.social .container .boxes {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 30px 0;
-}
-
-.social p {
-  text-align: center;
-}
-
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* FOOTER */
@@ -151,15 +101,16 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #f6f3fae0;
+    background-color: #27141f;
     height: 180px;
+    
 }
 
 .footer-nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #907eaa54;
+    border-bottom: 2px solid #d9bdb054;
     height: 80px;
 }
 .footer-navs{
@@ -168,22 +119,31 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px 280px;
-    color: #907eaa;
+    color: #d9bdb0;
 }
 
 .footer-titulo{
-    color: #300f50;
+    color: #d9bdb0;
     font-size: 18px;
     font-weight: 700;
 }
 
 .navs-footer{
     text-decoration: none;
-    color: #33095cac;
+    color: #d9bdb0ac;
     font-size: 14px;
 }
+.direitos{
+  color: #d9bdb0;
+
+  a{
+    color: #d9bdb0;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
 .creditos{
-    color: #33095c85;
+    color: #d9bdb085;
     font-size: 14px;
     padding: 24px 0px;
     text-decoration: none;
