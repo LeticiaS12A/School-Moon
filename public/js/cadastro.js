@@ -1,10 +1,6 @@
- // Array para armazenar hospital cadastradas para validação de código de ativação 
-  let listahospitalCadastradas = [];
+let listahospitalCadastradas = [];
 
   function cadastrar() {
-    // aguardar();
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
     let nomeVar = nome_completo.value;
     let senhaVar = senha_imp.value;
     let confirmacaoSenhaVar = confirmar_senha.value;
@@ -72,20 +68,15 @@
       return false;
 
     } else {
-      // fecha em 5 segundos se não tiver erros
       setTimeout(sumirMensagem, 5000);
     }
 
-
-    // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar

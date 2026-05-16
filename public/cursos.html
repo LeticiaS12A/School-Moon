@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,7 @@
     <link rel="stylesheet" href="./css/cursos.css"> 
     <script src="./js/sessao.js"></script>
 </head>
-
 <body onload="validarSessao()">
-
     <header>
         <div class="container-header">
             <div>
@@ -22,36 +19,31 @@
                 <a href="index.html" class="acesso-atual">Inicial</a>
                 <a href="sobre.html" class="navs-acesso">Sobre-nos</a>
                 <a href="dashAluno.html" class="navs-acesso">Dashboard</a>
-                
             </nav>
         </div>
     </header>
-
     <div class="dash-container">
         <div class="boas-vindas">
             <h1>Escolha sua trilha de conhecimento</h1>
             <p>Selecione um curso para continuar de onde parou (20% por página)</p>
         </div>
-
         <div class="cards-grid">
             <div class="card-curso" onclick="entrarCurso(1, 'HTML')">
                 <div class="card-icon">
                     <img src="assets/icon/html-icon.png" alt="HTML">
                 </div>
-                <h3>HTML5</h3>
+                <h3>HTML</h3>
                 <p>A estrutura básica da web.</p>
                 <button>Acessar Curso</button>
             </div>
-
             <div class="card-curso" onclick="entrarCurso(2, 'CSS')">
                 <div class="card-icon">
                     <img src="assets/icon/css-icon.png" alt="CSS">
                 </div>
-                <h3>CSS3</h3>
+                <h3>CSS</h3>
                 <p>Estilização e design moderno.</p>
                 <button>Acessar Curso</button>
             </div>
-
             <div class="card-curso" onclick="entrarCurso(3, 'JavaScript')">
                 <div class="card-icon">
                     <img src="assets/icon/js-icon.png" alt="JS">
@@ -60,7 +52,6 @@
                 <p>Lógica e interatividade total.</p>
                 <button>Acessar Curso</button>
             </div>
-
             <div class="card-curso" onclick="entrarCurso(4, 'Banco de Dados')">
                 <div class="card-icon">
                     <img src="assets/icon/sql-icon.png" alt="SQL">
@@ -71,7 +62,6 @@
             </div>
         </div>
     </div>
-
     <footer>
         <div class="container-footer">
             <div class="footer-nav">
@@ -85,14 +75,10 @@
             <div>
                 <p class="creditos">© 2026 School Moon — Educação gratuita e acessível para todos.</p>
             </div>
-            
         </div>
     </footer>
-
 </body>
-
 </html>
-
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 

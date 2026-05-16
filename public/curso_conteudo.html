@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./css/conteudo.css">
 </head>
 <body onload="carregarPagina()">
-
     <header>
         <div class="container-header">
             <p class="titulo-projeto">School Moon - <span id="span_nome_curso">Curso</span></p>
@@ -18,14 +17,11 @@
             <button onclick="sair()" class="btn-sair">Sair do curso</button>
         </div>
     </header>
-
     <main class="conteudo-principal">
         <div class="card-aula">
             <h2 id="titulo_aula">Carregando...</h2>
             <div id="texto_aula" class="texto-aula">
-                <!-- O conteúdo será injetado aqui pelo JS -->
             </div>
-
             <div class="navegacao">
                 <button id="btn_proximo" onclick="avancarPagina()">Próxima Página (20%)</button>
                 <button id="btn_concluir" onclick="concluirCurso()" style="display: none;">Concluir Curso</button>
@@ -49,69 +45,249 @@
             
         </div>
     </footer>
-
-    <script>
-        var paginaAtual = 1;
-        var progressoAtual = 0;
-        var idUsuario = sessionStorage.ID_USUARIO;
-        var idCurso = sessionStorage.ID_CURSO_ATUAL;
-
-        // Simulando conteúdos (Isso poderia vir do seu banco na tabela 'conteudos')
-        var aulas = {
-            1: ["Introdução", "Bem-vindo à base do curso! Aqui entenderemos os conceitos iniciais."],
-            2: ["Conceitos Intermediários", "Agora que você sabe o básico, vamos aprofundar na sintaxe."],
-            3: ["Praticando", "A melhor forma de aprender é colocando a mão na massa."],
-            4: ["Dicas Avançadas", "Truques que facilitam o dia a dia do desenvolvedor."],
-            5: ["Projeto Final", "Hora de consolidar tudo o que você aprendeu até aqui!"]
-        };
-
-        function carregarPagina() {
-            span_nome_curso.innerHTML = sessionStorage.NOME_CURSO_ATUAL;
-            atualizarInterface();
-        }
-
-        function atualizarInterface() {
-            titulo_aula.innerHTML = aulas[paginaAtual][0];
-            texto_aula.innerHTML = aulas[paginaAtual][1];
-            
-            // Atualiza a barra visual
-            progressoAtual = (paginaAtual - 1) * 20;
-            barra_progresso.style.width = progressoAtual + "%";
-
-            // Troca o botão se for a última página
-            if (paginaAtual == 5) {
-                btn_proximo.style.display = "none";
-                btn_concluir.style.display = "block";
-            }
-        }
-
-        function avancarPagina() {
-            paginaAtual++;
-            var novoProgresso = (paginaAtual - 1) * 20;
-            
-            enviarProgresso(novoProgresso);
-            atualizarInterface();
-        }
-
-        function enviarProgresso(valor) {
-            fetch(`/usuarios/atualizarProgresso/${idUsuario}/${idCurso}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ progressoServer: valor })
-            }).then(res => {
-                if (!res.ok) console.log("Erro ao salvar progresso");
-            });
-        }
-
-        function concluirCurso() {
-            enviarProgresso(100);
-            alert("Parabéns! Curso concluído com sucesso.");
-            window.location = "cursos.html";
-        }
-
-        function sair() {
-            window.location = "cursos.html";
-        }
-    </script>
 </body>
 </html>
+<script>
+    var paginaAtual = 1;
+    var progressoAtual = 0;
+    var idUsuario = sessionStorage.ID_USUARIO;
+    var idCurso = sessionStorage.ID_CURSO_ATUAL;
+
+    if(idCurso == 1){
+
+        var aulas = {
+
+            1: [
+                "Introdução ao HTML",
+
+                `<h2>Bem-vindo ao universo do HTML</h2>
+
+                <p>HTML significa HyperText Markup Language. Essa é a linguagem utilizada para criar a estrutura de praticamente todos os sites existentes na internet.</p>
+
+                <p>Sempre que você acessa uma página web, existe um código HTML organizando os conteúdos que aparecem na tela.</p>
+
+                <p>O HTML funciona através de tags, que indicam ao navegador qual elemento deve aparecer na página.</p>
+
+                <h3>O que podemos criar?</h3>
+
+                <ul>
+                    <li>Títulos</li>
+                    <li>Textos</li>
+                    <li>Imagens</li>
+                    <li>Vídeos</li>
+                    <li>Botões</li>
+                    <li>Menus</li>
+                </ul>
+
+                <h3>Exemplo simples</h3>
+
+                <pre>
+    &lt;h1&gt;Olá Mundo&lt;/h1&gt;
+                </pre>
+
+                <p>Esse código cria um título na tela.</p>`
+            ],
+
+            2: [
+                "Estrutura Básica do HTML",
+
+                `<h2>Montando uma página HTML</h2>
+
+                <p>Toda página HTML possui uma estrutura principal.</p>
+
+                <pre>
+    &lt;html&gt;
+
+    &lt;head&gt;
+        &lt;title&gt;Meu Site&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;h1&gt;Bem-vindo&lt;/h1&gt;
+
+    &lt;/body&gt;
+
+    &lt;/html&gt;
+                </pre>
+
+                <h3>Entendendo cada parte</h3>
+
+                <ul>
+                    <li>html → representa o documento</li>
+                    <li>head → configurações invisíveis</li>
+                    <li>title → nome da aba</li>
+                    <li>body → conteúdo visível</li>
+                </ul>
+
+                <p>O body é a parte mais importante da página, pois tudo que o usuário vê fica dentro dele.</p>`
+            ],
+
+            3: [
+                "Principais Tags HTML",
+
+                `<h2>Aprendendo as principais tags</h2>
+
+                <p>As tags são responsáveis por estruturar os conteúdos.</p>
+
+                <h3>Títulos</h3>
+
+                <pre>
+    &lt;h1&gt;Título&lt;/h1&gt;
+    &lt;h2&gt;Subtítulo&lt;/h2&gt;
+                </pre>
+
+                <h3>Parágrafos</h3>
+
+                <pre>
+    &lt;p&gt;Texto da página&lt;/p&gt;
+                </pre>
+
+                <h3>Imagens</h3>
+
+                <pre>
+    &lt;img src="imagem.png"&gt;
+                </pre>
+
+                <h3>Links</h3>
+
+                <pre>
+    &lt;a href="https://google.com"&gt;
+    Google
+    &lt;/a&gt;
+                </pre>
+
+                <h3>Listas</h3>
+
+                <pre>
+    &lt;ul&gt;
+    &lt;li&gt;Item&lt;/li&gt;
+    &lt;/ul&gt;
+                </pre>
+
+                <p>Essas tags são utilizadas em praticamente todos os sites modernos.</p>`
+            ],
+
+            4: [
+                "Formulários HTML",
+
+                `<h2>Criando formulários</h2>
+
+                <p>Os formulários permitem capturar dados dos usuários.</p>
+
+                <h3>Campo de texto</h3>
+
+                <pre>
+    &lt;input type="text"&gt;
+                </pre>
+
+                <h3>Campo de senha</h3>
+
+                <pre>
+    &lt;input type="password"&gt;
+                </pre>
+
+                <h3>Botões</h3>
+
+                <pre>
+    &lt;button&gt;Enviar&lt;/button&gt;
+                </pre>
+
+                <h3>Textarea</h3>
+
+                <pre>
+    &lt;textarea&gt;&lt;/textarea&gt;
+                </pre>
+
+                <p>Formulários são utilizados em sistemas de login, cadastro e contato.</p>
+
+                <h3>Boas práticas</h3>
+
+                <ul>
+                    <li>Organize os campos</li>
+                    <li>Use labels</li>
+                    <li>Facilite a leitura</li>
+                </ul>`
+            ],
+
+            5: [
+                "Projeto Final HTML",
+
+                `<h2>Projeto Final</h2>
+
+                <p>Agora é o momento de praticar tudo que você aprendeu.</p>
+
+                <h3>Seu desafio</h3>
+
+                <p>Crie uma página contendo:</p>
+
+                <ul>
+                    <li>Cabeçalho</li>
+                    <li>Título principal</li>
+                    <li>Imagem</li>
+                    <li>Parágrafos</li>
+                    <li>Botões</li>
+                    <li>Formulário</li>
+                    <li>Rodapé</li>
+                </ul>
+
+                <h3>Dicas</h3>
+
+                <ul>
+                    <li>Organize o código</li>
+                    <li>Use indentação</li>
+                    <li>Teste no navegador</li>
+                </ul>
+
+                <p>Parabéns! Você concluiu o curso introdutório de HTML.</p>`
+            ]
+        };
+
+    }
+
+    function carregarPagina() {
+        span_nome_curso.innerHTML = sessionStorage.NOME_CURSO_ATUAL;
+        atualizarInterface();
+    }
+
+    function atualizarInterface() {
+        titulo_aula.innerHTML = aulas[paginaAtual][0];
+        texto_aula.innerHTML = aulas[paginaAtual][1];
+        
+        progressoAtual = (paginaAtual - 1) * 20;
+        barra_progresso.style.width = progressoAtual + "%";
+
+        if (paginaAtual == 5) {
+            btn_proximo.style.display = "none";
+            btn_concluir.style.display = "block";
+        }
+    }
+
+    function avancarPagina() {
+        paginaAtual++;
+        var novoProgresso = (paginaAtual - 1) * 20;
+    
+        enviarProgresso(novoProgresso);
+        atualizarInterface();
+    }
+
+    function enviarProgresso(valor) {
+        fetch(`/usuarios/atualizarProgresso/${idUsuario}/${idCurso}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ progressoServer: valor })
+        }).then(res => {
+            if (!res.ok) console.log("Erro ao salvar progresso");
+        });
+    }
+
+    function concluirCurso() {
+        enviarProgresso(100);
+        alert("Parabéns! Curso concluído com sucesso.");
+        window.location = "cursos.html";
+    }
+
+    function sair() {
+        window.location = "cursos.html";
+    }
+</script>

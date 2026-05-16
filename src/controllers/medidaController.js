@@ -2,7 +2,7 @@ var medidaModel = require("../models/medidaModel");
 
 function buscarUltimasMedidas(req, res) {
     const limite_linhas = 7;
-    var idUsuario = req.params.idUsuario; // Mudamos de idAquario para idUsuario
+    var idUsuario = req.params.idUsuario;
 
     medidaModel.buscarUltimasMedidas(idUsuario, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {

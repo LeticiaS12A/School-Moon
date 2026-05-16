@@ -19,6 +19,7 @@
             <a href="sobre.html" class="navs-acesso">Sobre-nos</a>
             <a href="#" class="navs-acesso">Dashboard</a>
         </nav>
+        <button onclick="sair()" class="btn-sair">Sair do curso</button>
     </div>
 </header>
 
@@ -28,7 +29,6 @@
         <h2>Olá, <span id="b_usuario">Aluno</span></h2>
         <p>Acompanhe seu progresso de estudos</p>
     </div>
-
     <section class="kpis">
         <div class="card-kpi">
             <h3>Progresso Geral</h3>
@@ -43,7 +43,6 @@
             <p id="kpi_cursos_concluidos">0</p>
         </div>
     </section>
-
     <section class="graficos">
         <div class="grafico">
             <h3>Progresso por Curso</h3>
@@ -53,7 +52,6 @@
                 <canvas id="myChartCanvas"></canvas>
             </div>
         </div>
-
         <div class="grafico">
             <h3>Resumo</h3>
             <div class="lista">
@@ -68,7 +66,6 @@
             </div>
         </div>
     </section>
-
     <footer>
         <div class="container-footer">
             <div class="footer-nav">
@@ -124,7 +121,7 @@
             container_barras.innerHTML += `
                 <p>${registro.nome_curso}</p>
                 <div class="barra-container">
-                    <div class="barra" style="width: ${registro.progresso}%; background-color: #6c5ce7;"></div>
+                    <div class="barra" style="width: ${registro.progresso}%; background-color: #a62626;"></div>
                 </div>
             `;
         }
@@ -141,8 +138,7 @@
                 datasets: [{
                     label: 'Progresso %',
                     data: dadosProgresso,
-                    backgroundColor: '#6c5ce7',
-                    borderColor: '#a29bfe',
+                    backgroundColor: ['#5d1b1b','#772929','#923a3a','#b35151'],
                     borderWidth: 1
                 }]
             },
@@ -179,6 +175,9 @@
         kpi_cursos_concluidos.innerHTML = concluidos;
         resumo_mais_avancado.innerHTML = cursoMaisAvancado || "Nenhum";
         resumo_data_inicio.innerHTML = resposta[0].dt_inicio || "Sem data"; 
+    }
+    function sair() {
+        window.location = "cursos.html";
     }
 </script>
 </body>

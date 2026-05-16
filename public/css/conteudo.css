@@ -24,7 +24,7 @@
     width: 800px;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px #3b1515;
 }
 
 .texto-aula {
@@ -34,7 +34,7 @@
 }
 
 .navegacao button {
-    background-color: #6c5ce7;
+    background-color: #682424;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -44,7 +44,7 @@
 }
 
 .navegacao button:hover {
-    background-color: #5b4cc4;
+    background-color: #682424;
 }
 
 .btn-sair {

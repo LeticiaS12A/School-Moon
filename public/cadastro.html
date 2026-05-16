@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>School Moon</title>
-
+  <title>School Moon | Cadastro</title>
   <script src="./js/sessao.js"></script>
-
   <link rel="stylesheet" href="./css/estilo.css" />
   <link rel="stylesheet" href="./css/cadastro.css">
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
-
 <body class="body-cadastro">
-  <!--header inicio-->
   <header>
       <div class="container-header">
           <div>
@@ -31,8 +23,6 @@
           </nav>
       </div>
   </header>
-  <!--header fim-->
-
   <div class="alerta_erro"> 
     <div class="card_erro" id="cardErro" style="display: none;">
       <span id="fechar" onclick="sumirMensagem()">&times;</span>
@@ -74,7 +64,7 @@
 
   <script>
     function cadastrar() {
-      // Usando os IDs exatos do seu novo HTML
+
       var nomeVar = nome_completo.value.trim();
       var emailVar = email.value.trim();
       var senhaVar = senha_imp.value.trim();
@@ -95,6 +85,12 @@
       if (senhaVar != confirmacaoSenhaVar) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML = "As senhas não coincidem.";
+        return false;
+      }
+
+      if (senhaVar <= 6) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "Senha deve conter mais do que 6 caracteres";
         return false;
       }
 
