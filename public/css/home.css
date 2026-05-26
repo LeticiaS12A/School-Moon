@@ -103,14 +103,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 .trilha-card{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 300px;
+    width: 260px;
     height: 80px;
     background-color: #3b1515;
     border-radius: 10px;
@@ -142,12 +142,12 @@
     border-radius: 10px;    
     font-size: 16px;
     font-weight: 700;
-    color: #b35151;
+    color: #c29d8b;
     text-decoration: none;
 }
 .visitar-cursos:hover{
     transform: translateY(-2px);
-    color: #b35151;
+    color:#c29d8b;
     background-color: #3b1515bb;
     transition: 300ms;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);

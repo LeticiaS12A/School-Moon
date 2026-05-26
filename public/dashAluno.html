@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body onload="obterDadosGrafico()">
 <header>
     <div class="container-header">
@@ -15,11 +14,10 @@
             <p class="titulo-projeto pixelify-sans">School Moon</p>
         </div>
         <nav class="btn-navs">
-            <a href="index.html" class="acesso-atual">Inicial</a>
-            <a href="sobre.html" class="navs-acesso">Sobre-nos</a>
+            <a href="index.html" class="acesso-atual">Deslogar</a>
             <a href="#" class="navs-acesso">Dashboard</a>
         </nav>
-        <button onclick="sair()" class="btn-sair">Sair do curso</button>
+        <button onclick="sair()" class="btn-sair">Sair da dashboard</button>
     </div>
 </header>
 
@@ -67,23 +65,23 @@
         </div>
     </section>
     <footer>
-        <div class="container-footer">
-            <div class="footer-nav">
-                <p class="footer-titulo">School Moon</p>
-                <div class="footer-navs">
-                    <a href="login.html" class="navs-footer">Cursos</a>
-                    <a href="sobre.html" class="navs-footer">Sobre-nos</a>
-                </div>
-                <p class="direitos">Feito por <a href="https://github.com/LeticiaS12A">LeticiaS12A</a></p>
+    </div>
+    <div class="container-footer">
+        <div class="footer-nav">
+            <p class="footer-titulo">School Moon</p>
+            <div class="footer-navs">
+                <a href="login.html" class="navs-footer">Cursos</a>
             </div>
-            <div>
-                <p class="creditos">© 2026 School Moon — Educação gratuita e acessível para todos.</p>
-            </div>
-            
+            <p class="direitos">Feito por <a href="https://github.com/LeticiaS12A">LeticiaS12A</a></p>
         </div>
-    </footer>
-</div>
-
+        <div>
+            <p class="creditos">© 2026 School Moon — Educação gratuita e acessível para todos.</p>
+        </div>
+        
+    </div>
+</footer>
+</body>
+</html>
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var idUsuario = sessionStorage.ID_USUARIO;
@@ -180,5 +178,3 @@
         window.location = "cursos.html";
     }
 </script>
-</body>
-</html>
