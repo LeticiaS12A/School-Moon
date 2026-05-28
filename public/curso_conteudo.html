@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="stylesheet" href="./css/conteudo.css">
 </head>
-<body onload="carregarPagina()">
+<body class="body-curso" onload="carregarPagina()">
     <header>
         <div class="container-header">
             <p class="titulo-projeto">School Moon - <span id="span_nome_curso">Curso</span></p>
@@ -19,11 +19,11 @@
     </header>
     <main class="conteudo-principal">
         <div class="card-aula">
-            <h2 id="titulo_aula">Carregando...</h2>
+            <h2 id="titulo_aula" class="titulo-aula">Carregando...</h2>
             <div id="texto_aula" class="texto-aula">
             </div>
             <div class="navegacao">
-                <button id="btn_proximo" onclick="avancarPagina()">Próxima Página (20%)</button>
+                <button id="btn_proximo" onclick="avancarPagina()">Próxima Página</button>
                 <button id="btn_concluir" onclick="concluirCurso()" style="display: none;">Concluir Curso</button>
             </div>
         </div>

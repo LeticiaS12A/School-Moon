@@ -40,7 +40,7 @@
 
                     setTimeout(function () {
                         window.location = "./cursos.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1000);
 
                 });
 

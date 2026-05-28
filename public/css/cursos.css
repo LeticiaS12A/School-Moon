@@ -1,3 +1,17 @@
+.body-curso{
+    background-image: url('../assets/imgs/fundoCurso.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.boas-vindas{
+    flex-direction: column;
+    color: #f7f1f1;
+    background-color:#3b1515e6;
+    border: 1px solid #d9bdb083;
+    border-radius: 10px;
+    padding: 8px 8px;
+}
 .dash-container {
     padding: 40px;
     max-width: 1200px;
@@ -14,19 +28,18 @@
 }
 
 .card-curso {
-    background-color: #3b15159d;
+    background-color: #3b1515e6;
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid #3b1515;
 }
 
 .card-curso:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    border-color: #3b1515; 
+    border: 1px solid #d9bdb05f;
+    box-shadow: 0 8px 16px rgba(148, 55, 72, 0.322);
 }
 
 .card-icon img {

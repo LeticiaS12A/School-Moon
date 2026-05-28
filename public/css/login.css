@@ -53,13 +53,13 @@
   font-size: 1em;
   font-weight: 600;
   cursor: pointer;
-  color: #3b1515;
-  background-color: #682424;
+  color: #c29d8b;
+  background-color: #7c1f1f;
   transition: all 0.3s ease;
 }
 
 .form button:hover {
-  background-color: #7b2f2f;
+  background-color: #7c1f1fbd;
   transform: translateY(-2px);
 }
 

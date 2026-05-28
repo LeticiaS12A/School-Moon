@@ -1,7 +1,13 @@
+.body-curso{
+    background-image: url('../assets/imgs/fundoCurso.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 .progresso-bar-container {
     width: 300px;
     height: 10px;
-    background-color: #e0e0e0;
+    background-color: #ffffff;
     border-radius: 5px;
     overflow: hidden;
     margin: 0 20px;
@@ -9,25 +15,29 @@
 
 .progresso-fecho {
     height: 100%;
-    background-color: #4caf50;
-    transition: width 0.5s ease;
+    background-color: #af4c4c;
 }
 
 .conteudo-principal {
     display: flex;
     justify-content: center;
-    padding: 50px;
+    margin-bottom: 40px;
 }
 
 .card-aula {
-    background: white;
+    background: #eaeaea;
     width: 800px;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 20px #3b1515;
+    box-shadow: 0 0 20px #941717;
+}
+.titulo-aula{
+    color: #3b1515;
 }
 
 .texto-aula {
+    color: #3b1515;
+    background-color: transparent;
     margin: 30px 0;
     line-height: 1.6;
     font-size: 18px;
@@ -45,12 +55,19 @@
 
 .navegacao button:hover {
     background-color: #682424;
+    transform: translateY(-2px);
+    transition: 300ms;
 }
 
 .btn-sair {
     background: none;
-    border: 1px solid white;
-    color: white;
-    cursor: pointer;
-    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #d9bdb0;
+}
+.btn-sair:hover{
+    color: #c9949e;
+    transform: translateY(-4px);
+    transition: 300ms;
 }
