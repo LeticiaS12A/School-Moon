@@ -1,65 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>School Moon | Aula</title>
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="stylesheet" href="./css/conteudo.css">
-</head>
-<body class="body-curso" onload="carregarPagina()">
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <link rel="stylesheet" href="./css/conteudo.css" />
+  </head>
+  <body class="body-curso" onload="carregarPagina()">
     <header>
-        <div class="container-header">
-            <p class="titulo-projeto">School Moon - <span id="span_nome_curso">Curso</span></p>
-            <div class="progresso-bar-container">
-                <div id="barra_progresso" class="progresso-fecho" style="width: 0%;"></div>
-            </div>
-            <button onclick="sair()" class="btn-sair">Sair do curso</button>
+      <div class="container-header">
+        <p class="titulo-projeto">
+          School Moon - <span id="span_nome_curso">Curso</span>
+        </p>
+        <div class="progresso-bar-container">
+          <div
+            id="barra_progresso"
+            class="progresso-fecho"
+            style="width: 0%"
+          ></div>
         </div>
+        <button onclick="sair()" class="btn-sair">Sair do curso</button>
+      </div>
     </header>
     <main class="conteudo-principal">
-        <div class="card-aula">
-            <h2 id="titulo_aula" class="titulo-aula">Carregando...</h2>
-            <div id="texto_aula" class="texto-aula">
-            </div>
-            <div class="navegacao">
-                <button id="btn_proximo" onclick="avancarPagina()">Próxima Página</button>
-                <button id="btn_concluir" onclick="concluirCurso()" style="display: none;">Concluir Curso</button>
-            </div>
+      <div class="card-aula">
+        <h2 id="titulo_aula" class="titulo-aula">Carregando...</h2>
+        <div id="texto_aula" class="texto-aula"></div>
+        <div class="navegacao">
+          <button id="btn_proximo" onclick="avancarPagina()">
+            Próxima Página
+          </button>
+          <button
+            id="btn_concluir"
+            onclick="concluirCurso()"
+            style="display: none"
+          >
+            Concluir Curso
+          </button>
         </div>
+      </div>
     </main>
 
     <footer>
-        <div class="container-footer">
-            <div class="footer-nav">
-                <p class="footer-titulo">School Moon</p>
-                <div class="footer-navs">
-                    <a href="login.html" class="navs-footer">Cursos</a>
-                </div>
-                <p class="direitos">Feito por <a href="https://github.com/LeticiaS12A">LeticiaS12A</a></p>
-            </div>
-            <div>
-                <p class="creditos">© 2026 School Moon — Educação gratuita e acessível para todos.</p>
-            </div>
-            
+      <div class="container-footer">
+        <div class="footer-nav">
+          <p class="footer-titulo">School Moon</p>
+          <div class="footer-navs">
+            <a href="login.html" class="navs-footer">Cursos</a>
+          </div>
+          <p class="direitos">
+            Feito por <a href="https://github.com/LeticiaS12A">LeticiaS12A</a>
+          </p>
         </div>
+        <div>
+          <p class="creditos">
+            © 2026 School Moon — Educação gratuita e acessível para todos.
+          </p>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
 <script>
-    var paginaAtual = 1;
-    var progressoAtual = 0;
-    var idUsuario = sessionStorage.ID_USUARIO;
-    var idCurso = sessionStorage.ID_CURSO_ATUAL;
+  var paginaAtual = 1;
+  var progressoAtual = 0;
+  var idUsuario = sessionStorage.ID_USUARIO;
+  var idCurso = sessionStorage.ID_CURSO_ATUAL;
 
-    if(idCurso == 1){
+  if (idCurso == 1) {
+    var aulas = {
+      1: [
+        "Introdução ao HTML",
 
-        var aulas = {
-
-            1: [
-                "Introdução ao HTML",
-
-                `<h2>Bem-vindo ao universo do HTML</h2>
+        `<h2>Bem-vindo ao universo do HTML</h2>
 
                 <p>HTML significa HyperText Markup Language. Essa é a linguagem utilizada para criar a estrutura de praticamente todos os sites existentes na internet.</p>
 
@@ -82,13 +96,13 @@
 
                 &lt;h1&gt;Olá Mundo&lt;/h1&gt;
 
-                <p>Esse código cria um título na tela.</p>`
-            ],
+                <p>Esse código cria um título na tela.</p>`,
+      ],
 
-            2: [
-                "Estrutura Básica do HTML",
+      2: [
+        "Estrutura Básica do HTML",
 
-                `<h2>Montando uma página HTML</h2>
+        `<h2>Montando uma página HTML</h2>
 
                 <p>Toda página HTML possui uma estrutura principal.</p>
 
@@ -115,13 +129,13 @@
                     <li>body → conteúdo visível</li>
                 </ul>
 
-                <p>O body é a parte mais importante da página, pois tudo que o usuário vê fica dentro dele.</p>`
-            ],
+                <p>O body é a parte mais importante da página, pois tudo que o usuário vê fica dentro dele.</p>`,
+      ],
 
-            3: [
-                "Principais Tags HTML",
+      3: [
+        "Principais Tags HTML",
 
-                `<h2>Aprendendo as principais tags</h2>
+        `<h2>Aprendendo as principais tags</h2>
 
                 <p>As tags são responsáveis por estruturar os conteúdos.</p>
 
@@ -160,13 +174,13 @@
     &lt;/ul&gt;
                 </pre>
 
-                <p>Essas tags são utilizadas em praticamente todos os sites modernos.</p>`
-            ],
+                <p>Essas tags são utilizadas em praticamente todos os sites modernos.</p>`,
+      ],
 
-            4: [
-                "Formulários HTML",
+      4: [
+        "Formulários HTML",
 
-                `<h2>Criando formulários</h2>
+        `<h2>Criando formulários</h2>
 
                 <p>Os formulários permitem capturar dados dos usuários.</p>
 
@@ -202,13 +216,13 @@
                     <li>Organize os campos</li>
                     <li>Use labels</li>
                     <li>Facilite a leitura</li>
-                </ul>`
-            ],
+                </ul>`,
+      ],
 
-            5: [
-                "Projeto Final HTML",
+      5: [
+        "Projeto Final HTML",
 
-                `<h2>Projeto Final</h2>
+        `<h2>Projeto Final</h2>
 
                 <p>Agora é o momento de praticar tudo que você aprendeu.</p>
 
@@ -234,55 +248,545 @@
                     <li>Teste no navegador</li>
                 </ul>
 
-                <p>Parabéns! Você concluiu o curso introdutório de HTML.</p>`
-            ]
-        };
+                <p>Parabéns! Você concluiu o curso introdutório de HTML.</p>`,
+      ],
+    };
+  }
+  if (idCurso == 2) {
+    var aulas = {
+      1: [
+        "Introdução ao CSS",
 
+        `<h2>Bem-vindo ao universo do CSS</h2>
+
+                <p>CSS significa Cascading Style Sheets. Essa é a linguagem responsável pela aparência visual dos sites.</p>
+
+                <p>Enquanto o HTML cria a estrutura, o CSS deixa tudo bonito e organizado.</p>
+
+                <p>Com CSS podemos alterar cores, tamanhos, fontes, espaçamentos e animações.</p>
+
+                <h3>O que podemos estilizar?</h3>
+
+                <ul>
+                    <li>Textos</li>
+                    <li>Botões</li>
+                    <li>Imagens</li>
+                    <li>Menus</li>
+                    <li>Fundos</li>
+                    <li>Layouts</li>
+                </ul>
+
+                <h3>Exemplo simples</h3>
+
+                <pre>
+    h1{
+        color: blue;
     }
+                </pre>
 
-    function carregarPagina() {
-        span_nome_curso.innerHTML = sessionStorage.NOME_CURSO_ATUAL;
-        atualizarInterface();
+                <p>Esse código altera a cor do título para azul.</p>`,
+      ],
+
+      2: [
+        "Como utilizar CSS",
+
+        `<h2>Aplicando estilos</h2>
+
+                <p>O CSS pode ser utilizado de diferentes formas dentro do projeto.</p>
+
+                <h3>CSS Inline</h3>
+
+                <pre>
+    &lt;h1 style="color:red"&gt;
+        Título
+    &lt;/h1&gt;
+                </pre>
+
+                <h3>CSS Interno</h3>
+
+                <pre>
+    &lt;style&gt;
+    h1{
+        color: red;
     }
+    &lt;/style&gt;
+                </pre>
 
-    function atualizarInterface() {
-        titulo_aula.innerHTML = aulas[paginaAtual][0];
-        texto_aula.innerHTML = aulas[paginaAtual][1];
-        
-        progressoAtual = (paginaAtual - 1) * 20;
-        barra_progresso.style.width = progressoAtual + "%";
+                <h3>CSS Externo</h3>
 
-        if (paginaAtual == 5) {
-            btn_proximo.style.display = "none";
-            btn_concluir.style.display = "block";
-        }
+                <pre>
+    &lt;link rel="stylesheet" href="style.css"&gt;
+                </pre>
+
+                <p>O método mais utilizado é o CSS externo, pois deixa o projeto mais organizado.</p>`,
+      ],
+
+      3: [
+        "Principais propriedades CSS",
+
+        `<h2>Aprendendo propriedades importantes</h2>
+
+                <p>As propriedades definem como os elementos irão aparecer.</p>
+
+                <h3>Cores</h3>
+
+                <pre>
+    color: white;
+    background-color: black;
+                </pre>
+
+                <h3>Tamanho</h3>
+
+                <pre>
+    width: 200px;
+    height: 100px;
+                </pre>
+
+                <h3>Espaçamento</h3>
+
+                <pre>
+    margin: 20px;
+    padding: 10px;
+                </pre>
+
+                <h3>Bordas</h3>
+
+                <pre>
+    border: 2px solid blue;
+                </pre>
+
+                <h3>Fontes</h3>
+
+                <pre>
+    font-size: 20px;
+    font-family: Arial;
+                </pre>
+
+                <p>Essas propriedades são muito utilizadas na criação de interfaces modernas.</p>`,
+      ],
+
+      4: [
+        "Flexbox e Layout",
+
+        `<h2>Organizando elementos na tela</h2>
+
+                <p>O Flexbox facilita o posicionamento dos elementos dentro da página.</p>
+
+                <h3>Container Flex</h3>
+
+                <pre>
+    .container{
+        display: flex;
     }
+                </pre>
 
-    function avancarPagina() {
-        paginaAtual++;
-        var novoProgresso = (paginaAtual - 1) * 20;
-    
-        enviarProgresso(novoProgresso);
-        atualizarInterface();
-    }
+                <h3>Centralizando elementos</h3>
 
-    function enviarProgresso(valor) {
-        fetch(`/usuarios/atualizarProgresso/${idUsuario}/${idCurso}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ progressoServer: valor })
-        }).then(res => {
-            if (!res.ok) console.log("Erro ao salvar progresso");
-        });
+                <pre>
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+                </pre>
 
-    function concluirCurso() {
-        enviarProgresso(100);
-        alert("Parabéns! Curso concluído com sucesso.");
-        window.location = "cursos.html";
-    }
+                <h3>Direção dos elementos</h3>
 
-    function sair() {
-        window.location = "cursos.html";
+                <pre>
+    flex-direction: column;
+                </pre>
+
+                <p>Com Flexbox conseguimos criar layouts responsivos de maneira muito mais simples.</p>`,
+      ],
+
+      5: [
+        "Projeto Final CSS",
+
+        `<h2>Projeto Final</h2>
+
+                <p>Agora você irá estilizar uma página completa utilizando CSS.</p>
+
+                <h3>Seu desafio</h3>
+
+                <ul>
+                    <li>Adicionar cores</li>
+                    <li>Personalizar botões</li>
+                    <li>Criar menus</li>
+                    <li>Centralizar elementos</li>
+                    <li>Utilizar Flexbox</li>
+                    <li>Melhorar o visual da página</li>
+                </ul>
+
+                <h3>Dicas</h3>
+
+                <ul>
+                    <li>Organize os estilos</li>
+                    <li>Evite repetir código</li>
+                    <li>Teste diferentes combinações</li>
+                </ul>
+
+                <p>Parabéns! Você concluiu o curso introdutório de CSS.</p>`,
+      ],
+    };
+  }
+
+  if (idCurso == 3) {
+    var aulas = {
+      1: [
+        "Introdução ao JavaScript",
+
+        `<h2>Bem-vindo ao JavaScript</h2>
+
+                <p>JavaScript é a linguagem responsável pela interatividade dos sites.</p>
+
+                <p>Com JavaScript podemos criar animações, validações, sistemas e interações com o usuário.</p>
+
+                <h3>O que o JavaScript pode fazer?</h3>
+
+                <ul>
+                    <li>Mostrar mensagens</li>
+                    <li>Alterar elementos</li>
+                    <li>Criar cálculos</li>
+                    <li>Validar formulários</li>
+                    <li>Criar jogos</li>
+                </ul>
+
+                <h3>Exemplo simples</h3>
+
+                <pre>
+    alert("Olá Mundo");
+                </pre>
+
+                <p>Esse comando mostra uma mensagem na tela.</p>`,
+      ],
+
+      2: [
+        "Variáveis e Tipos",
+
+        `<h2>Armazenando informações</h2>
+
+                <p>As variáveis servem para guardar dados dentro do programa.</p>
+
+                <h3>Exemplo</h3>
+
+                <pre>
+    var nome = "Maria";
+    var idade = 20;
+                </pre>
+
+                <h3>Tipos de dados</h3>
+
+                <ul>
+                    <li>String → textos</li>
+                    <li>Number → números</li>
+                    <li>Boolean → verdadeiro ou falso</li>
+                </ul>
+
+                <h3>Exibindo dados</h3>
+
+                <pre>
+    console.log(nome);
+                </pre>
+
+                <p>O console.log exibe informações no console do navegador.</p>`,
+      ],
+
+      3: [
+        "Condições e Operadores",
+
+        `<h2>Tomando decisões no código</h2>
+
+                <p>As condições permitem executar ações diferentes dependendo da situação.</p>
+
+                <h3>Exemplo de if</h3>
+
+                <pre>
+    if(idade >= 18){
+        alert("Maior de idade");
     }
+                </pre>
+
+                <h3>Operadores</h3>
+
+                <ul>
+                    <li>== → igual</li>
+                    <li>!= → diferente</li>
+                    <li>> → maior</li>
+                    <li>< → menor</li>
+                </ul>
+
+                <h3>Else</h3>
+
+                <pre>
+    else{
+        alert("Menor de idade");
+    }
+                </pre>
+
+                <p>As estruturas condicionais são essenciais em qualquer sistema.</p>`,
+      ],
+
+      4: [
+        "Funções e Eventos",
+
+        `<h2>Criando funções</h2>
+
+                <p>Funções servem para reutilizar códigos.</p>
+
+                <h3>Exemplo</h3>
+
+                <pre>
+    function mostrarMensagem(){
+        alert("Olá");
+    }
+                </pre>
+
+                <h3>Chamando função</h3>
+
+                <pre>
+    mostrarMensagem();
+                </pre>
+
+                <h3>Eventos</h3>
+
+                <pre>
+    &lt;button onclick="mostrarMensagem()"&gt;
+        Clique
+    &lt;/button&gt;
+                </pre>
+
+                <p>Os eventos permitem que o usuário interaja com a página.</p>`,
+      ],
+
+      5: [
+        "Projeto Final JavaScript",
+
+        `<h2>Projeto Final</h2>
+
+                <p>Agora você irá criar funcionalidades utilizando JavaScript.</p>
+
+                <h3>Seu desafio</h3>
+
+                <ul>
+                    <li>Criar variáveis</li>
+                    <li>Utilizar condições</li>
+                    <li>Criar funções</li>
+                    <li>Interagir com botões</li>
+                    <li>Mostrar mensagens</li>
+                </ul>
+
+                <h3>Dicas</h3>
+
+                <ul>
+                    <li>Teste o código</li>
+                    <li>Use console.log</li>
+                    <li>Organize as funções</li>
+                </ul>
+
+                <p>Parabéns! Você concluiu o curso introdutório de JavaScript.</p>`,
+      ],
+    };
+  }
+
+  if (idCurso == 4) {
+    var aulas = {
+      1: [
+        "Introdução ao Banco de Dados",
+
+        `<h2>Bem-vindo ao Banco de Dados</h2>
+
+                <p>Banco de dados é o sistema responsável por armazenar informações de forma organizada.</p>
+
+                <p>Praticamente todos os sistemas utilizam banco de dados.</p>
+
+                <h3>O que podemos armazenar?</h3>
+
+                <ul>
+                    <li>Usuários</li>
+                    <li>Produtos</li>
+                    <li>Pedidos</li>
+                    <li>Mensagens</li>
+                    <li>Notas</li>
+                </ul>
+
+                <h3>Exemplo de tabela</h3>
+
+                <pre>
+    CREATE TABLE usuarios(
+        id INT,
+        nome VARCHAR(50)
+    );
+                </pre>
+
+                <p>As tabelas organizam os dados em linhas e colunas.</p>`,
+      ],
+
+      2: [
+        "Comandos SQL Básicos",
+
+        `<h2>Aprendendo SQL</h2>
+
+                <p>SQL é a linguagem utilizada para manipular bancos de dados.</p>
+
+                <h3>Inserindo dados</h3>
+
+                <pre>
+    INSERT INTO usuarios
+    VALUES(1, "Maria");
+                </pre>
+
+                <h3>Consultando dados</h3>
+
+                <pre>
+    SELECT * FROM usuarios;
+                </pre>
+
+                <h3>Removendo dados</h3>
+
+                <pre>
+    DELETE FROM usuarios
+    WHERE id = 1;
+                </pre>
+
+                <p>Esses comandos são os mais utilizados no dia a dia.</p>`,
+      ],
+
+      3: [
+        "Filtros e Condições SQL",
+
+        `<h2>Filtrando informações</h2>
+
+                <p>Os filtros ajudam a localizar dados específicos.</p>
+
+                <h3>WHERE</h3>
+
+                <pre>
+    SELECT * FROM usuarios
+    WHERE idade >= 18;
+                </pre>
+
+                <h3>ORDER BY</h3>
+
+                <pre>
+    SELECT * FROM usuarios
+    ORDER BY nome;
+                </pre>
+
+                <h3>LIMIT</h3>
+
+                <pre>
+    SELECT * FROM usuarios
+    LIMIT 5;
+                </pre>
+
+                <p>Esses recursos ajudam a organizar as consultas.</p>`,
+      ],
+
+      4: [
+        "Relacionamentos entre tabelas",
+
+        `<h2>Conectando tabelas</h2>
+
+                <p>Os relacionamentos permitem unir informações de diferentes tabelas.</p>
+
+                <h3>Chave Primária</h3>
+
+                <pre>
+    id_usuario INT PRIMARY KEY
+                </pre>
+
+                <h3>Chave Estrangeira</h3>
+
+                <pre>
+    FOREIGN KEY(id_usuario)
+    REFERENCES usuarios(id_usuario)
+                </pre>
+
+                <h3>JOIN</h3>
+
+                <pre>
+    SELECT *
+    FROM pedidos
+    JOIN usuarios
+    ON pedidos.id_usuario = usuarios.id_usuario;
+                </pre>
+
+                <p>Os relacionamentos são essenciais em sistemas maiores.</p>`,
+      ],
+
+      5: [
+        "Projeto Final Banco de Dados",
+
+        `<h2>Projeto Final</h2>
+
+                <p>Agora você irá criar um pequeno banco de dados completo.</p>
+
+                <h3>Seu desafio</h3>
+
+                <ul>
+                    <li>Criar tabelas</li>
+                    <li>Inserir dados</li>
+                    <li>Criar consultas</li>
+                    <li>Utilizar filtros</li>
+                    <li>Relacionar tabelas</li>
+                </ul>
+
+                <h3>Dicas</h3>
+
+                <ul>
+                    <li>Planeje as tabelas</li>
+                    <li>Use nomes organizados</li>
+                    <li>Teste os comandos SQL</li>
+                </ul>
+
+                <p>Parabéns! Você concluiu o curso introdutório de Banco de Dados.</p>`,
+      ],
+    };
+  }
+
+  function carregarPagina() {
+    span_nome_curso.innerHTML = sessionStorage.NOME_CURSO_ATUAL;
+    atualizarInterface();
+  }
+
+  function atualizarInterface() {
+    titulo_aula.innerHTML = aulas[paginaAtual][0];
+    texto_aula.innerHTML = aulas[paginaAtual][1];
+
+    progressoAtual = (paginaAtual - 1) * 20;
+    barra_progresso.style.width = progressoAtual + "%";
+
+    if (paginaAtual == 5) {
+      btn_proximo.style.display = "none";
+      btn_concluir.style.display = "block";
+    }
+  }
+
+  function avancarPagina() {
+    paginaAtual++;
+    var novoProgresso = (paginaAtual - 1) * 20;
+
+    enviarProgresso(novoProgresso);
+    atualizarInterface();
+  }
+
+  function enviarProgresso(valor) {
+    fetch(`/usuarios/atualizarProgresso/${idUsuario}/${idCurso}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ progressoServer: valor }),
+    }).then((res) => {
+      if (!res.ok) console.log("Erro ao salvar progresso");
+    });
+  }
+
+  function concluirCurso() {
+    enviarProgresso(100);
+    alert("Parabéns! Curso concluído com sucesso.");
+    window.location = "cursos.html";
+  }
+
+  function sair() {
+    window.location = "cursos.html";
+  }
 </script>
