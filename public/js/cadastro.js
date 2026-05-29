@@ -23,7 +23,7 @@ let listahospitalCadastradas = [];
       return false;
 
       //Verificando se o nome é maior ou igual a um caractere
-    } else if (nomeVar.length <= 1) {
+    } else if (nomeVar.length <= 3) {
       cardErro.style.display = "block";
       cardErro.style.background = "linear-gradient(135deg, #dc2626, #b91c1c)";
       mensagem_erro.innerHTML =
@@ -50,7 +50,7 @@ let listahospitalCadastradas = [];
       return false;
 
       //Verificando se a senha é maior ou igual a 6 caracteres 
-    } else if (senhaVar.length <= 6) {
+    } else if (senhaVar.length <= 7) {
       cardErro.style.display = "block";
       cardErro.style.background = "linear-gradient(135deg, #dc2626, #b91c1c)";
       mensagem_erro.innerHTML =
